@@ -1,0 +1,8 @@
+SELECT donor.first_name, donor.last_name, blood_donations.collection_date
+FROM donor
+JOIN donor_medical ON donor.donor_id = donor_medical.donor_id
+JOIN blood_donations ON donor_medical.donor_medical_id = blood_donations.donor_medical_id
+WHERE blood_donations.collection_date BETWEEN '2023-01-01' AND '2023-12-31'
+ORDER BY first_name;
+
+# Shows all donors who have given blood in a date range.

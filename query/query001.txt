@@ -1,0 +1,6 @@
+SELECT donor.first_name, donor.last_name, blood_donations.collection_date
+FROM donor
+JOIN donor_medical ON donor.donor_id = donor_medical.donor_id
+JOIN blood_donations ON donor_medical.donor_medical_id = blood_donations.donor_medical_id;
+
+# Shows donor first name, last name and donation date.

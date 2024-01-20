@@ -1,0 +1,7 @@
+SELECT blood.blood_type, ROUND(SUM(blood_donations.quantity), 2) AS całkowita_ilosc_krwi
+FROM blood
+JOIN donor_medical ON blood.blood_type = donor_medical.blood_type
+JOIN blood_donations ON donor_medical.donor_medical_id = blood_donations.donor_medical_id
+GROUP BY blood.blood_type;
+
+# This SQL query selects the blood type and calculates the sum of blood donated by donors for each blood type.

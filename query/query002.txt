@@ -1,0 +1,8 @@
+SELECT patient.first_name, patient.last_name, hospital.hospital_name
+FROM patient
+JOIN patient_medical ON patient.patient_id = patient_medical.patient_id
+JOIN blood_transfusion ON patient_medical.patient_medical_id = blood_transfusion.patient_medical_id
+JOIN hospital ON blood_transfusion.hospital_id = hospital.hospital_id
+WHERE blood_transfusion.hospital_id = 1;
+
+# Shows all patients who were hospitalized at a specific hospital by hospital id.

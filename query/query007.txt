@@ -1,0 +1,10 @@
+SELECT p.first_name AS patient_first_name, p.last_name AS patient_last_name,
+       d.first_name AS donor_first_name, d.last_name AS donor_last_name
+FROM patient_medical pm
+JOIN blood b ON pm.blood_type = b.blood_type
+JOIN donor_medical dm ON b.compatible_types LIKE CONCAT('%', dm.blood_type, '%')
+JOIN patient p ON pm.patient_id = p.patient_id
+JOIN donor d ON dm.donor_id = d.donor_id
+WHERE p.first_name = 'Robert' AND p.last_name = 'Davis';
+
+# Shows the patient's first and last name along with information about all compatible donors.

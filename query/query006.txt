@@ -1,0 +1,5 @@
+SELECT hospital_name
+FROM hospital
+WHERE emergency_services_availability = FALSE;
+
+# Shows hospitals where emergency services aren't available.

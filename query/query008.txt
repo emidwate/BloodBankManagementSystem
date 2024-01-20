@@ -1,0 +1,23 @@
+CREATE VIEW v_donor_info AS
+SELECT
+    d.donor_id,
+    d.first_name,
+    d.last_name,
+    d.date_of_birth,
+    d.gender,
+    d.contact_number,
+    d.email,
+    d.home_address,
+    dm.blood_type,
+	dm.allergies,
+    dm.weight,
+	dm.medical_condition,
+    dm.medical_history,
+    dm.insurance_details
+FROM
+    donor d
+JOIN donor_medical dm ON d.donor_id = dm.donor_id;
+
+SELECT * FROM v_donor_info;
+
+# Shows all donor information, including their medical record.
