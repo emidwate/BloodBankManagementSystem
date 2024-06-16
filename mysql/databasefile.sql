@@ -105,7 +105,7 @@ CREATE TABLE `blood_transfusion` (
 );
 
 CREATE TABLE `blood_donations` (
-  `blood_donations_id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `blood_donation_id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `donor_medical_id` INT NOT NULL,
   `hospital_id` INT,
   `private_facility_id` INT,

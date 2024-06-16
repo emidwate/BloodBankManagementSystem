@@ -1,0 +1,9 @@
+SELECT first_name, last_name, SUM(quantity) as counter
+FROM donor d
+JOIN donor_medical dm ON d.donor_id = dm.donor_id
+JOIN blood_donations bd ON bd.donor_medical_id = dm.donor_medical_id
+GROUP BY first_name, last_name
+ORDER BY counter
+LIMIT 2;
+
+# Shows two name, surname and quantity of donated blood of the two people who donated the least amount of blood

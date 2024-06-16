@@ -1,0 +1,9 @@
+SELECT first_name, last_name, count(blood_donation_id) as counter
+FROM donor d
+JOIN donor_medical dm ON d.donor_id = dm.donor_id
+JOIN blood_donations bd ON bd.donor_medical_id = dm.donor_medical_id
+GROUP BY first_name, last_name
+ORDER BY counter DESC
+LIMIT 1;
+
+# Shows name, surname and number of donations of the person who donated the most times
