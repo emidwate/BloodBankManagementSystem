@@ -7,14 +7,14 @@ VALUES
 (11, 3, NULL, '2023-09-16', '2023-09-26', '2023-09-23'),
 (10, 1, NULL, '2023-11-13', '2023-11-23', '2023-11-20');
 
-SELECT hospital_name, count(transfusion_id) as number_of_transfusions
+SELECT hospital_name, count(transfusion_id) as counter
 FROM blood_transfusion bt
 INNER JOIN hospital h
 ON bt.hospital_id = h.hospital_id
 GROUP BY h.hospital_name
 ORDER BY count(transfusion_id);
 
-SELECT facility_name, count(transfusion_id) as number_of_transfusions
+SELECT facility_name, count(transfusion_id) as counter
 FROM blood_transfusion bt
 INNER JOIN private_facility pf
 ON bt.private_facility_id = pf.facility_id
