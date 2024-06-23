@@ -15,7 +15,7 @@ def update_data(): # wrapped in a function so that the data is updated whenever 
                 INNER JOIN hospital h
                 ON bt.hospital_id = h.hospital_id
                 GROUP BY h.hospital_name
-                # ORDER BY count(transfusion_id);""") 
+                ORDER BY count(transfusion_id);""") 
 
   # cursor.execute("""SELECT facility_name, count(transfusion_id) as counter
   #               FROM blood_transfusion bt
