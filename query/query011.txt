@@ -6,4 +6,4 @@ GROUP BY first_name, last_name
 ORDER BY counter
 LIMIT 2;
 
-# Shows two name, surname and quantity of donated blood of the two people who donated the least amount of blood
+# Shows name, surname and quantity of donated blood by the two people who donated the least blood

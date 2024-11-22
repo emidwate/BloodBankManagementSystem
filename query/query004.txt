@@ -1,6 +1,6 @@
 # MySQL
 
-SELECT donor.first_name, donor.last_name, IFNULL(blood_donations.collection_date, 'Nie oddał(a) krwi') AS status
+SELECT donor.first_name, donor.last_name, IFNULL(blood_donations.collection_date, "He/she didn't donate blood") AS status
 FROM donor
 JOIN donor_medical ON donor.donor_id = donor_medical.donor_id
 LEFT JOIN blood_donations ON donor_medical.donor_medical_id = blood_donations.donor_medical_id;
